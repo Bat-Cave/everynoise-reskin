@@ -1,7 +1,151 @@
-body {
-  background: #000;
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-table {
-  background: #ff0 !important;
+body {
+  background: #1e293b;
+  color: white;
+  margin: 0 auto;
+}
+
+button,
+input[type="button"] {
+  background: #a78bfa;
+  color: #0f172a;
+  padding-inline: 16px;
+  padding-block: 4px;
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+td {
+  padding: 0;
+}
+
+td:has(~ .note) ~ td {
+  padding: 0 4px;
+}
+
+.subtitle ~ table > tbody > tr > td {
+  padding: 0 !important;
+}
+
+/* artist */
+a:has(~ .play) {
+  color: #67e8f9;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+a:hover {
+  color: #67e8f9 !important;
+  text-decoration: none !important;
+  filter: hue-rotate(90deg);
+}
+
+a[title="See this playlist"] {
+  font-size: 12px;
+  padding: 3px;
+  margin: 4px;
+  background: #f472b6;
+  color: #500724;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play {
+  color: #a78bfa;
+  display: flex;
+  gap: 2px;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.play[played] {
+  color: #d946ef;
+}
+
+.play:hover {
+  filter: hue-rotate(90deg);
+  color: #a78bfa !important;
+  text-decoration: none !important;
+}
+
+.playlink {
+  font-size: 12px;
+  padding: 3px;
+  margin: 4px;
+  background: #f472b6;
+  color: #500724;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table tr td .datarow,
+table tr td .tableheader {
+  display: flex;
+  padding: 0 4px;
+  gap: 2px;
+  height: 34px;
+}
+
+table tr td .datarow td,
+table tr td .tableheader td {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+table tr td .datarow:hover,
+table tr td .tableheader:hover {
+  background: #334155;
+}
+
+table tr td .datarow:hover td,
+table tr td .tableheader:hover td {
+  background: transparent;
+}
+
+table tr td .datarow .stat,
+table tr td .tableheader .stat {
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+table tr td .datarow .stat:first-of-type,
+table tr td .tableheader .stat:first-of-type {
+  padding: 0 8px 0 0;
+  width: 40px;
+}
+
+table tr td .datarow td:last-child,
+table tr td .tableheader td:last-child {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Spotify Playlist Preview */
+
+div:has(iframe[id="spotify"]) {
+  position: sticky;
+  top: 8px;
+}
+
+tr:has(.note) {
+  display: flex;
+  align-items: center;
+}
+
+tr td.note:first-of-type {
+  width: 75px;
+  text-align: right;
+  flex-shrink: 0;
 }
